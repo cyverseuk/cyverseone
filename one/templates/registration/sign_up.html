@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %} Login {% endblock %}
+
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+<div class="container-fluid">
+	<div class="row" style="height:100vh">
+	<div class="col-4 align-self-center">
+		<h1 class="my-5"> <a href="/">CyVerse ONE </a> </h1>
+			<form method="post">
+			{% csrf_token %}{{form|crispy}}
+			<button type=submit class="btn btn-success">Register</button>
+			<p> Log in <a href="/login">here</a></p>
+			</form>
+	</div>
+	<div class="col-sm bg-primary">
+		<div class="align-self-center">
+		<p>
+		As a CyVerse UK user you can request a virtual machine hosted on our private cloud to carry out analysis in your own Linux environment, just like Amazon Web Services or Microsoft Azure.
+
+		You can use your custom VM to do many things, such as running a web service to serve data and analysis to your community, to submit bigger jobs to our CyVerse UK HPC powered by Condor
+		</p>
+		</div>
+
+	</div>
+	</div>
+</div>
+
+<!--
+<div class="container-fluid">
+
+	<div class="row" style="height:100vh">
+	New section
+	</div>
+</div>
+-->
+{% endblock %}
+

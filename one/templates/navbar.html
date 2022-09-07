@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+  	<div>
+    	<ul class="navbar-nav">
+      		<li class="nav-item">
+  				<a class="navbar-brand" href="/">CyVerse ONE</a>
+			</li>
+          	<li class="nav-item">
+      		  <a class="nav-link disabled" href="#">Pricing</a>
+      		</li>
+   			<li class="nav-item">
+      		  <a class="nav-link active" href="/instantiate">Instantiate</a>
+      		</li>
+     		<li class="nav-item dropdown">
+      		  <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      		    About
+      		  </a>
+      		  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+      		    <a class="dropdown-item" href="https://cyverseuk.org">CyVerse UK</a>
+      		    <a class="dropdown-item" href="https://opennebula.io">OpenNebula</a>
+      		  </div>
+      		</li>
+		</ul>
+	</div>
+  <div>
+    <ul class="navbar-nav">
+	  {% if user.is_authenticated %}
+	  <li class='nav-item'>
+		<a class='nav-link active' href="/logout">Log out</a>
+	  </li>
+	  {% else %}
+	  <li class='nav-item'>
+		<a class='nav-link active btn btn-primary mx-2' href="/login">Log in</a>
+	  </li>
+	  <li class='nav-item'>
+		<a class='nav-link active btn' href="/sign-up">Sign up</a>
+	  </li>
+	  {% endif %}
+    </ul>
+  </div>
+
+	</div>
+</nav>
